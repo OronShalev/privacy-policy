@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      animation: float 20s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content {
+      padding: 50px 40px;
+    }
+
+    .privacy-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid #4facfe;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .privacy-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .privacy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .privacy-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .card-content {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .last-updated {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      display: inline-block;
+      font-weight: 500;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .contact-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 15px;
+    }
+
+    .contact-email {
+      display: inline-block;
+      background: white;
+      color: #4facfe;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      background: #4facfe;
+      color: white;
+    }
+
+    .shield-icon {
+      font-size: 80px;
+      color: rgba(255, 255, 255, 0.2);
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      z-index: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 10px;
+        border-radius: 15px;
+      }
+      
+      .header {
+        padding: 40px 20px;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .content {
+        padding: 30px 20px;
+      }
+      
+      .privacy-card {
+        padding: 25px 20px;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="shield-icon">🛡️</div>
+      <h1>Privacy Policy</h1>
+      <div class="subtitle">Your privacy is our priority</div>
+    </div>
+    
+    <div class="content">
+      <div class="last-updated fade-in">
+        📅 Last updated: August 2, 2025
+      </div>
+      
+      <div class="privacy-card fade-in">
+        <div class="card-icon">🔒</div>
+        <div class="card-title">Zero Data Collection</div>
+        <div class="card-content">
+          This application does not collect, store, or share any personal information from its users. We believe in privacy by design and have built our application to operate without requiring any of your personal data.
+        </div>
+      </div>
+      
+      <div class="privacy-card fade-in">
+        <div class="card-icon">🌟</div>
+        <div class="card-title">Our Commitment</div>
+        <div class="card-content">
+          We respect your privacy and are committed to protecting it through transparent practices and secure technology. Your trust is important to us, and we work hard to maintain it every day.
+        </div>
+      </div>
+      
+      <div class="privacy-card fade-in">
+        <div class="card-icon">🔍</div>
+        <div class="card-title">Complete Transparency</div>
+        <div class="card-content">
+          What you see is what you get. We operate with complete transparency about our data practices. If we don't collect it, we can't misuse it, sell it, or lose it.
+        </div>
+      </div>
+      
+      <div class="contact-section fade-in">
+        <div class="contact-title">Questions or Concerns?</div>
+        <div style="margin-bottom: 15px; color: #666;">
+          We're here to help and answer any questions about our privacy practices.
+        </div>
+        <a href="mailto:oronsh100@gmail.com" class="contact-email">
+          📧 Contact Us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add staggered animation to cards
+    document.addEventListener('DOMContentLoaded', function() {
+      const cards = document.querySelectorAll('.fade-in');
+      cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+      });
+    });
+
+    // Add subtle parallax effect to header
+    window.addEventListener('scroll', function() {
+      const scrolled = window.pageYOffset;
+      const header = document.querySelector('.header');
+      if (header) {
+        header.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+  </script>
+</body>
+</html>
